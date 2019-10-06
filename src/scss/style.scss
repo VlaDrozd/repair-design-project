@@ -1,0 +1,511 @@
+@mixin futura-demi() {
+  font-family: "Futura Demi", Arial, sans-serif;
+}
+
+@mixin futura-book() {
+  font-family: "Futura Book", Arial, sans-serif;
+}
+
+@mixin yaseva-one() {
+  font-family: "Yeseva One", Arial, sans-serif;
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+$color-black: #131313;
+$color-gold: #e3b873;
+$color-gray: #363636;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100%;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0px auto;
+  max-width: 1440px;
+  overflow: hidden;
+}
+
+.header {
+  background-color: $color-black;
+  padding: 0px 18px 0px 18px;
+
+  &__cover {
+    display: flex;
+    justify-content: space-between;
+    padding: 37px 0px 36px 0px;
+    max-width: 1256px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    h1 {
+      @include futura-demi();
+      color: $color-gold;
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+
+      @media screen and (max-width: 375px) {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+  }
+
+  &__nav {
+    max-width: 581px;
+    width: 100%;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      list-style: none;
+      li {
+        a {
+          @include futura-book();
+          font-size: 14px;
+          line-height: 16px;
+          color: #ffffff;
+          &:hover {
+            color: $color-gold;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 945px) {
+      display: none;
+    }
+  }
+
+  &__number {
+    a {
+      @include futura-demi();
+      color: $color-gold;
+      font-size: 14px;
+      line-height: 16px;
+      text-decoration: underline;
+      text-align: right;
+      vertical-align: middle;
+
+      @media screen and (max-width: 375px) {
+        color: #ffffff;
+        font-size: 12px;
+        line-height: 14px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__call {
+    a {
+      @include futura-demi();
+      color: #ffffff;
+      background-color: $color-gold;
+      padding: 13px 33px;
+      font-size: 13px;
+      line-height: 15px;
+      text-transform: uppercase;
+    }
+
+    @media screen and (max-width: 1110px) {
+      display: none;
+    }
+  }
+}
+
+.home {
+  background-color: $color-black;
+
+  &__cover {
+    position: relative;
+    display: flex;
+    height: 753px;
+
+    @media screen and (max-width: 510px) {
+      height: 476px;
+    }
+  }
+
+  &__instagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    max-width: 82px;
+    width: 82px / 1440px * 100%;
+    max-height: 707px;
+    height: 100%;
+
+    &-text {
+      @include futura-demi();
+      color: $color-gold;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      @include transform(rotate(90deg));
+    }
+
+    &-stick {
+      position: relative;
+      top: 39px;
+      height: 51px;
+      width: 2px;
+      background-color: $color-gold;
+    }
+
+    @media screen and (max-width: 570px) {
+      display: none;
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    justify-content: center;
+    padding-left: 60px;
+    width: 100%;
+    max-height: 707px;
+    background: url(../../assets/img/home_about_bg.jpg);
+    background-size: cover;
+    background-position: center;
+
+    @media screen and (max-width: 570px) {
+      padding: 85px 18px 0px 18px;
+    }
+
+    &-title {
+      @include yaseva-one();
+      color: #ffffff;
+      font-size: 40px;
+      line-height: 53px;
+      text-transform: uppercase;
+      padding-bottom: 19px;
+
+      &-city {
+        color: $color-gold;
+      }
+
+      @media screen and (max-width: 610px) {
+        font-size: 23px;
+        line-height: 132.83%;
+      }
+    }
+
+    &-content {
+      @include futura-book();
+      max-width: 504px;
+      color: #ffffff;
+      font-size: 22px;
+      line-height: 30px;
+      padding-bottom: 41px;
+
+      @media screen and (max-width: 610px) {
+        font-size: 18px;
+        line-height: 135.84%;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+      max-width: 434px;
+      width: 100%;
+
+      @media screen and (max-width: 510px) {
+        flex-flow: column;
+      }
+
+      &-calculate {
+        padding: 19px 42px 19px 41px;
+        @include futura-demi();
+        font-style: italic;
+        color: #ffffff;
+        background-color: $color-gold;
+        font-size: 13px;
+        line-height: 15px;
+        text-align: center;
+
+        @media screen and (max-width: 510px) {
+          margin-bottom: 26px;
+        }
+      }
+
+      &-submit {
+        padding: 19px 23px 19px 22px;
+        @include futura-demi();
+        font-style: italic;
+        color: #ffffff;
+        font-size: 13px;
+        line-height: 15px;
+        border: 1px solid #ffffff;
+        text-align: center;
+      }
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 247px;
+    height: 97px;
+    background-color: $color-black;
+
+    @media screen and (max-width: 510px) {
+      display: none;
+    }
+
+    &:hover {
+      .home__scroll-text {
+        font-size: 16px;
+      }
+
+      .home__scroll-circle {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    &-text {
+      padding-right: 12px;
+      @include yaseva-one();
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 19px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+
+    &-circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 29px;
+      height: 29px;
+      border: 1.5px solid $color-gold;
+      border-radius: 100%;
+      transition: all 0.3s;
+    }
+  }
+}
+
+.projects {
+  background: url(../../assets/img/projects_bg.jpg);
+  background-size: 100% 1026px;
+  background-repeat: repeat no-repeat;
+  background-position: top;
+  height: 10000px;
+}
+
+.sliders {
+  &__cover {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 442px 100%;
+    grid-column-gap: 50px;
+    padding-left: 97px;
+
+    @media screen and (max-width: 375px) {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+    }
+
+    &-title {
+      position: relative;
+      padding-top: 128px;
+      @include yaseva-one();
+      color: $color-gold;
+      font-size: 27px;
+      line-height: 37px;
+      letter-spacing: -0.07em;
+      text-transform: uppercase;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 18px;
+        left: 140px;
+        width: 92px;
+        height: 1px;
+        background-color: $color-gold;
+
+        @media screen and (max-width: 375px) {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 375px) {
+        font-size: 22px;
+        line-height: 138.6%;
+        text-align: center;
+      }
+    }
+
+    &-description {
+      padding-top: 34px;
+      @include futura-book();
+      font-size: 18px;
+      line-height: 29px;
+
+      @media screen and (max-width: 375px) {
+        font-size: 14px;
+        line-height: 158.48%;
+
+        text-align: center;
+      }
+    }
+
+    &-atributes {
+      padding-top: 42px;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 44px;
+
+      &-atribute {
+        @include yaseva-one();
+        color: $color-gold;
+        font-size: 18px;
+        line-height: 25px;
+        text-transform: uppercase;
+      }
+
+      &-data {
+        padding-top: 9px;
+        @include futura-book();
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+
+    &-nav {
+      display: flex;
+      padding-top: 59px;
+      justify-content: space-between;
+      list-style: none;
+      width: 623px;
+      border-bottom: 1px solid $color-black;
+
+      li {
+        padding-bottom: 6px;
+        @include yaseva-one();
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 14px;
+        line-height: 19px;
+        text-transform: uppercase;
+        border-bottom: 1px solid $color-black;
+
+        &:hover {
+          color: $color-gold;
+          border-color: $color-gold;
+        }
+      }
+    }
+
+    &-images {
+      position: relative;
+      display: flex;
+      padding-top: 45px;
+      width: 100%;
+      img {
+        width: 679px;
+        height: 482px;
+      }
+
+      img:first-child,
+      img + img {
+        margin-right: 21px;
+      }
+
+      &-arrowleft {
+        position: absolute;
+        display: none;
+
+        @media screen and (max-width: 375px) {
+          position: absolute;
+          top: 50%;
+          left: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 54px;
+          height: 54px;
+          border-radius: 100%;
+          background-color: $color-gold;
+          svg {
+            padding-left: 3px;
+          }
+        }
+      }
+
+      &-arrowright {
+        position: absolute;
+        top: 50%;
+        left: 730px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 54px;
+        height: 54px;
+        border-radius: 100%;
+        background-color: $color-gold;
+        svg {
+          padding-left: 3px;
+        }
+      }
+    }
+
+    &-switcher {
+      display: flex;
+      padding-top: 79px;
+      justify-content: space-between;
+      align-items: center;
+      width: 206px;
+
+      &-left {
+        @include transform(rotate(180deg));
+      }
+
+      &-circle {
+        width: 9.57px;
+        height: 9.67px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 100%;
+
+        &:hover {
+          background-color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.item_2 {
+  grid-row: 1/3;
+  grid-column: 2;
+  overflow: hidden;
+
+  @media screen and (max-width: 375px) {
+    grid-row: auto;
+    grid-column: auto;
+  }
+}
