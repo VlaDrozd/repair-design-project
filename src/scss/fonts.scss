@@ -13,8 +13,22 @@
 }
 
 @font-face {
+  font-family: 'Futura Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../assets/fonts/futuramediumc.otf);
+}
+
+@font-face {
   font-family: 'Yeseva One';
   font-style: normal;
   font-weight: normal;
   src: url(../../assets/fonts/YesevaOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../assets/fonts/ProximaNova-Regular.woff);
 }
